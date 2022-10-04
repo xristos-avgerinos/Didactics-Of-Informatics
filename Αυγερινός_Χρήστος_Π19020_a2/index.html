@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <script data-require="jquery@*" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link data-require="bootstrap-css@*" data-semver="4.0.0-alpha.4" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/graph.js"></script>
+  <script src="js/polynomial.js"></script>
+</head>
+
+<body>
+<br>
+ <h1 style="text-align:center">Γεωμετρική ερμηνεία του ορισμένου ολοκληρώματος</h1>
+ 
+
+  <fieldset>
+	
+	<br>
+
+	<div id="id01" class="modal">
+		<h1 style="text-align:center;">Ορισμός Ορισμένου Ολοκληρώματος</h1>
+		<br>
+		<div class="center">
+			<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>  
+			<br/>
+			<label>Έστω μια συνάρτηση f  σ υ ν ε χ ή ς  στο [α,β]. Με τα σημεία <img src="img/imgB3_122.jpg"> χωρίζουμε το διάστημα [α,β] σε ν ισομήκη υποδιαστήματα μήκους Δχ = <img src="img/imgB3_121.jpg">.<br><img src="img/imgB3_125.jpg"></label>
+			<label>Στη συνέχεια επιλέγουμε ενα σημείο ξ<sub>κ</sub> ϵ [x<sub>κ-1</sub> , x<sub>κ</sub> ] , για κάθε κ ϵ {1,2,...,ν}, και σχηματίζουμε το άθροισμα : <img src="img/imgB3_123.jpg"><br> το οποίο συμβολίζεται, σύντομα, ως εξής :<img src="img/imgB3_126.jpg"> (άθροισμα RIEMANN)</label>
+			<p>
+			Aποδεικνύεται ότι,
+			"Το όριο του αθροίσματος Sν , δηλαδή το <img src="img/imgB3_127.jpg"> υπάρχει στο R και είναι ανεξάρτητο από την επιλογή των ενδιάμεσων σημείων ξκ".
+			<br><br>Το παραπάνω όριο ονομάζεται ορισμένο ολοκλήρωμα της συνεχούς συνάρτησης f από το α στο β, συμβολίζεται με <img src="img/imgB3_128.jpg"> και διαβάζεται "ολοκλήρωμα της f από το α στο β".
+			<br>Δηλαδή,  <img src="img/imgB3_129.jpg">
+			</p>
+			<label>Σύμφωνα με τα παραπάνω το ολοκλήρωμα <img src="img/imgB3_130.jpg"> δίνει το εμβαδόν Ε(Ω) του χωρίου Ω που περικλείεται από τη γραφική παράσταση της f τον άξονα xʹx και τις ευθείες x = α και x = β. Δηλαδή, <img src="img/imgB3_135.jpg"></label>
+		</div>
+		<br>
+	</div>
+	
+	
+	<div class="center" style=" text-align: center;">
+		<button style="float: right;background-color: #57b846;"onclick="document.getElementById('id01').style.display='block'">Γενικός ορισμός</button>
+		<label>Οι συναρτήσεις οι οποίες υποστηρίζονται ειναι πολυονυμικές συναρτήσεις της μορφης : $$ f(x) = ax^3+bx^2+cx+d $$ </label>
+		<label>	Το Ε(Ω) ειναι το αποτελεσμα του ολοκληρωματος οπου s ειναι η αρχη του διαστηματος και e το τελος του. $$ Ε(Ω) = \int_s^e f(x)dx $$ Μια προσέγγιση του εμβαδού Ε(Ω) που αναζητάμε είναι το άθροισμα, των εμβαδών των παρακατω ορθογωνίων στο γράφημα με βάσεις τα ισομήκη υποδιαστήματα, μήκους Δχ που χωρίζουμε το διάστημα [s,e] και ύψη την τιμή της συνάρτησης στο ενδιάμεσο σημείο καθενός απο αυτά τα διαστήματα.</label>
+		<br /><br />
+		<b>Δώστε τους συντελεστές του πολυωνύμου, το μήκος των υποδιαστήματων καθώς και το διάστημα που ανήκει η f (s,e)</b>
+		
+		<table class="center_t" >
+		  <tr>
+
+			<td>
+			  <label for="a">a:</label>
+			  <input id="a" type="text" style="width:60px" required>
+			</td>
+			<td>
+			  <label for="b">b:</label>
+			  <input id="b" type="text" style="width:60px" >
+			</td>
+
+			<td>
+			  <label for="c">c:</label>
+			  <input id="c" type="text" style="width:60px" />
+			</td>
+			<td>
+			  <label for="d">d:</label>
+			  <input id="d" type="text" style="width:60px">
+			</td>
+			<td>
+			  <label for="increment">Δχ:</label>
+			  <input type="number" id="increment" min="0.25" max="1.00" value="0.25" step=".01" style="width:60px">
+			</td>
+			<td>
+			  <label for="startx">s:</label>
+			  <input id="startx" type="text" style="width:60px">
+			</td>
+			<td>
+			  <label for="endx">e:</label>
+			  <input id="endx" type="text" style="width:60px">
+			</td>
+
+		  </tr>
+		  <tr>
+		  <td></td>
+			<td>
+			  <input type="button" value="Σχεδίαση" id="btnGraph">
+			</td>
+			<td></td>
+			<td>
+			  <input id="btnDemo" type="button" value="Παράδειγμα">
+			</td>
+			<td></td>
+			<td>
+			   <button onClick="window.location.reload();">Καθάρισμα</button>
+			</td>
+		  </tr>
+		</table>
+		
+		<div id="navigateHere" name="navigateHere">
+			<div id="detailsInfo" class="alert alert-warning" style="text-align:left; color:black;"></div>
+
+			<br />
+		
+			<h3>Γράφημα</h3>
+			
+			<canvas id="Graph" style="background:#b5cce3;border:1px solid #AFAFAF" width="900" height="900"></canvas>
+		</div>
+	</div>
+  </fieldset>
+  <script>
+    $(document).ready(function() {
+
+      $("#btnDemo").click(function() {
+		
+        $("#a").val("-1.0");
+        $("#b").val("-2.0");
+        $("#c").val("1.0");
+        $("#d").val("4.0");
+        $("#increment").val("0.25");
+        $("#startx").val("-3.0");
+        $("#endx").val("1.0");
+
+		this.disabled = true;
+        $("#btnGraph").click();
+		
+      });
+   
+	  
+      $("#btnGraph").click(function() {
+		
+        var a, b, c, d, increment, startx, endx = 0;
+
+        a = parseFloat($("#a").val());
+        b = parseFloat($("#b").val());
+        c = parseFloat($("#c").val());
+        d = parseFloat($("#d").val());
+        increment = parseFloat($("#increment").val());
+        startx = parseFloat($("#startx").val());
+        endx = parseFloat($("#endx").val());
+		//alert(a +' ' + b +' ' + c +' ' + d +' ' + increment +' ' + startx +' ' + endx);
+		if ((isNaN(a)) || (isNaN(b)) || (isNaN(c)) || (isNaN(d)) || (isNaN(increment)) || (isNaN(startx)) || (isNaN(endx))) {
+			alert("Παρακαλώ συμπληρώστε όλα τα πεδία με πραγματικούς αριθμούς");
+			
+		}else if(increment<=0){
+			alert("Το μήκος των υποδιαστημάτων(Δχ) πρεπει να ειναι θετικος αριθμος");
+		}else{
+			
+			var myGraph = new Graph({
+			  canvasId: 'Graph',
+			  minX: -13,
+			  minY: -13,
+			  maxX: 13,
+			  maxY: 13,
+			  unitsPerTick: 1
+			});
+
+			
+			var totalArea = myGraph.drawPolynomial(function(a, b, c, d, x) {
+			  return ((a * x * x * x) + (b * x * x) + c * x + d * 1.0).toFixed(2);
+			}, a, b, c, d, increment, true, '#807FFF', 3.0, startx, endx);
+
+			
+
+			document.getElementById('detailsInfo').innerHTML='Παρακάτω φαίνεται το γράφημα για το ολοκλήρωμα που δώσατε. <br> Αν γνωρίζετε την τιμή της συνάρτησης στο ενδιάμεσο σημείο καθενός απο τα ισομήκη διαστήματα που χωρίζουμε το διάστημα ['+startx+','+endx+'] δηλαδή τα παρακάτω ύψη: <br>';
+			
+			for(var i=0; i<YaxisValues.length; i++){
+				j=i+1;
+				if(j==YaxisValues.length){
+					document.getElementById('detailsInfo').innerHTML+='f(ξ'+j+'): <b>'+YaxisValues[i] +'</b>';
+				}else{
+					document.getElementById('detailsInfo').innerHTML += 'f(ξ'+j+') : <b>'+YaxisValues[i] +'</b> , ';
+				}
+				
+			}
+			document.getElementById('detailsInfo').innerHTML+='<br>Τότε υπολογίστε το συνολικό εμβαδόν απο το άθροισμα των εμβαδόν των παρακάτω ορθογωνίων στο γράφημα το οποιο θα ειναι και η τιμη του ολοκληρωματος.<br>'
+					+ '<div style="display:inline-block; text-align:center;"> <div class="intto">'+endx+'</div><div class="intsymb">∫</div><div class="intfrom">'+startx+'</div></div><div class="inttext">'+polynomial(a,b,c,d)+' dx = <b>Ε(Ω)</b> =  <input id="result" type="text" style="width:70px"> <button id="submitSol" onclick="comparisson('+totalArea+','+increment+','+startx+','+endx+')">Υποβολή λύσης(μέχρι 2 δεκαδικά ψηφία)</button> <button id="reveal"  onclick="printSteps('+increment+','+totalArea+','+startx+','+endx+')">Αποκάλυψη λύσης</button></div> ';
+					
+			this.disabled = true;
+			document.getElementById('btnDemo').disabled = true;
+			
+			scrollSmoothTo('navigateHere');
+		}
+		
+      });
+
+    });
+	
+	window.onbeforeunload = function () {
+	  window.scrollTo(0,0);
+	}
+	function comparisson(totalArea,increment,startx,endx) {
+		input = document.getElementById("result").value;
+		if(input == ''){
+			alert("Δώστε μια τιμή");
+		}
+	    else if(totalArea==input){
+			document.getElementById('detailsInfo').innerHTML+='<br><h2 style="text-align: center; color:green;">Πολύ σωστά</h2>';
+			printSteps(increment,totalArea,startx,endx);
+	    }else{	
+			alert("Λάθος.Παρακαλώ ξαναπροσπαθήστε!");
+	    }
+	}
+	function printSteps(increment,totalArea,startx,endx){
+		var stringSum = '';
+		for(var i=0; i<YaxisValues.length; i++){
+			j=i+1;
+			if(j==YaxisValues.length){
+				stringSum+= YaxisValues[i];
+			}else{
+				stringSum+= YaxisValues[i] + '+';
+			}
+		}
+		
+		document.getElementById('detailsInfo').innerHTML+='<br> Οπως βλέπουμε εχει επιλεχθεί ενα σημείο ξ<sub>κ</sub> στο ενδιάμεσο σημείο των [x<sub>κ-1</sub> , x<sub>κ</sub> ] , για κάθε κ ϵ {1,2,...,ν} οπου χ<sub>0</sub> = '+startx+' και <br> χ<sub>ν</sub> = '+endx+','+
+		' και έτσι σχηματίζεται το άθροισμα : <b> S<sub>ν</sub> = f(ξ<sub>1</sub>)Δχ + f(ξ<sub>2</sub>)Δχ + ...+ f(ξ<sub>ν</sub>)Δχ = [f(ξ<sub>1</sub>)+...+f(ξ<sub>ν</sub>)]Δχ</b> <br> το οποίο υπολογίζεται ως εξής: <br>'+
+		'['+stringSum+'] * '+increment + ' = <b>'+ totalArea+'</b>';
+		document.getElementById('submitSol').disabled = true;
+		document.getElementById('reveal').disabled = true;
+	}
+	function scrollSmoothTo(elementId) {
+	  var element = document.getElementById(elementId);
+	  element.scrollIntoView({
+		block: 'start',
+		behavior: 'smooth'
+	  });
+	}
+	function polynomial(a,b,c,d) {
+	  let result='';
+	  if (a != 0) {
+		if(a==1){
+			result += 'x<sup>3</sup>+';
+		}else if(a==-1){
+			result += '-x<sup>3</sup>+';
+		}else{
+			result += a+'x<sup>3</sup>+';
+		}
+		
+	  }
+	  if (b!=0){
+	  
+		if(b==1){
+			result += 'x<sup>2</sup>+';
+		}else if(b==-1){
+			result=result.slice(0, -1);
+			result += '-x<sup>2</sup>+';
+		}else{
+			if(b<0){
+				result=result.slice(0, -1);
+			}
+			result += b+'x<sup>2</sup>+';
+		}
+		
+	  }
+	  if (c!=0){
+		if(c==1){
+			result += 'x+';
+		}else if(c==-1){
+			result=result.slice(0, -1);
+			result +='-x+';
+		}else{
+			if(c<0){
+				result=result.slice(0, -1);
+			}
+			result += c+'x+';
+		}
+		
+	  }
+	  if (d!=0){
+		if(d<0){
+			result=result.slice(0, -1);
+		}
+		result += d;
+	  }else{
+		result=result.slice(0, -1);
+	  }
+	  return result;
+	}
+  </script>
+
+</body>
+
+</html>
